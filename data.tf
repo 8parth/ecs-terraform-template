@@ -19,3 +19,12 @@ data "aws_iam_policy_document" "ecs-instance-policy" {
         }
     }
 }
+
+data "aws_ami" "ubuntu" {
+    most_recent = true
+
+    filter {
+        name = "name"
+        values = ["amzn-ami-2017.09.i-amazon-ecs-optimized"]
+    }
+}
